@@ -20,12 +20,14 @@ namespace Core2LearnWebApp.Controllers
         }
         public IActionResult Index()
         {
+
             var model = context.Rezervations
                 .Include(i => i.Guests)
                 .Include(i => i.Payments).ToList();
 
             return View(model);
         }
+
 
         public IActionResult About()
         {

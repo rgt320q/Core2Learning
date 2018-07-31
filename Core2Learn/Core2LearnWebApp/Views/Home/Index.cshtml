@@ -31,6 +31,7 @@
     <table class="table-bordered">
         <thead>
             <tr>
+                <th>Rezervation No</th>
                 <th>Name</th>
                 <th>Surname</th>
                 <th>Arrival Date</th>
@@ -42,6 +43,7 @@
             @foreach (var RezList in Model)
             {
                 <tr>
+                    <td>@RezList.Id</td>
                     @foreach (var gst in RezList.Guests)
                     {
                         <td>@gst.Name</td>
