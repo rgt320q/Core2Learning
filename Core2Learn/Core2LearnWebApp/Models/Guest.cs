@@ -10,14 +10,14 @@ namespace Core2LearnWebApp.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public string SurName { get; set; }
-        public string GuestEmail { get; set; }
+        public string Email { get; set; }
         public string Phone { get; set; }
         public DateTime? BirthDay { get; set; }
         public string IdentityType { get; set; }
         public string IdentityNumber { get; set; }
         public string IdentitySerialNo { get; set; }
         public string Gender { get; set; }
-        public string GuestMartialStatus { get; set; }
+        public string MartialStatus { get; set; }
         public string FatherName { get; set; }
         public string MotherName { get; set; }
         public string Country { get; set; }

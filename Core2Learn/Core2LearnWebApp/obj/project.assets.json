@@ -12663,23 +12663,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\admin\\.nuget\\packages\\": {},
+    "C:\\Users\\cetin\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Git.Repository\\HotelEntityCore2\\Core2Learning\\Core2Learn\\Core2LearnWebApp\\Core2LearnWebApp.csproj",
+      "projectUniqueName": "D:\\Git\\Core2Learning\\Core2Learn\\Core2LearnWebApp\\Core2LearnWebApp.csproj",
       "projectName": "Core2LearnWebApp",
-      "projectPath": "C:\\Git.Repository\\HotelEntityCore2\\Core2Learning\\Core2Learn\\Core2LearnWebApp\\Core2LearnWebApp.csproj",
-      "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
-      "outputPath": "C:\\Git.Repository\\HotelEntityCore2\\Core2Learning\\Core2Learn\\Core2LearnWebApp\\obj\\",
+      "projectPath": "D:\\Git\\Core2Learning\\Core2Learn\\Core2LearnWebApp\\Core2LearnWebApp.csproj",
+      "packagesPath": "C:\\Users\\cetin\\.nuget\\packages\\",
+      "outputPath": "D:\\Git\\Core2Learning\\Core2Learn\\Core2LearnWebApp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\cetin\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

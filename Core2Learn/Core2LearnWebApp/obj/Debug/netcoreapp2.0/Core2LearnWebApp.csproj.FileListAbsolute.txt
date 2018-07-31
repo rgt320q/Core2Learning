@@ -2,3 +2,14 @@ C:\Git.Repository\HotelEntityCore2\Core2Learning\Core2Learn\Core2LearnWebApp\obj
 C:\Git.Repository\HotelEntityCore2\Core2Learning\Core2Learn\Core2LearnWebApp\obj\Debug\netcoreapp2.0\Core2LearnWebApp.csproj.CoreCompileInputs.cache
 C:\Git.Repository\HotelEntityCore2\Core2Learning\Core2Learn\Core2LearnWebApp\obj\Debug\netcoreapp2.0\Core2LearnWebApp.AssemblyInfoInputs.cache
 C:\Git.Repository\HotelEntityCore2\Core2Learning\Core2Learn\Core2LearnWebApp\obj\Debug\netcoreapp2.0\Core2LearnWebApp.AssemblyInfo.cs
+D:\Git\Core2Learning\Core2Learn\Core2LearnWebApp\obj\Debug\netcoreapp2.0\Core2LearnWebApp.csprojAssemblyReference.cache
+D:\Git\Core2Learning\Core2Learn\Core2LearnWebApp\obj\Debug\netcoreapp2.0\Core2LearnWebApp.csproj.CoreCompileInputs.cache
+D:\Git\Core2Learning\Core2Learn\Core2LearnWebApp\obj\Debug\netcoreapp2.0\Core2LearnWebApp.AssemblyInfoInputs.cache
+D:\Git\Core2Learning\Core2Learn\Core2LearnWebApp\obj\Debug\netcoreapp2.0\Core2LearnWebApp.AssemblyInfo.cs
+D:\Git\Core2Learning\Core2Learn\Core2LearnWebApp\bin\Debug\netcoreapp2.0\Core2LearnWebApp.deps.json
+D:\Git\Core2Learning\Core2Learn\Core2LearnWebApp\bin\Debug\netcoreapp2.0\Core2LearnWebApp.runtimeconfig.json
+D:\Git\Core2Learning\Core2Learn\Core2LearnWebApp\bin\Debug\netcoreapp2.0\Core2LearnWebApp.runtimeconfig.dev.json
+D:\Git\Core2Learning\Core2Learn\Core2LearnWebApp\bin\Debug\netcoreapp2.0\Core2LearnWebApp.dll
+D:\Git\Core2Learning\Core2Learn\Core2LearnWebApp\bin\Debug\netcoreapp2.0\Core2LearnWebApp.pdb
+D:\Git\Core2Learning\Core2Learn\Core2LearnWebApp\obj\Debug\netcoreapp2.0\Core2LearnWebApp.dll
+D:\Git\Core2Learning\Core2Learn\Core2LearnWebApp\obj\Debug\netcoreapp2.0\Core2LearnWebApp.pdb
