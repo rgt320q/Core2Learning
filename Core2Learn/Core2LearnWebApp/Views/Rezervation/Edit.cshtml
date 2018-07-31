@@ -1,0 +1,106 @@
+﻿@model Core2LearnWebApp.Models.Rezervation
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<h4>Rezervation</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Arrivaldate" class="control-label"></label>
+                <input asp-for="Arrivaldate" class="form-control" />
+                <span asp-validation-for="Arrivaldate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DepartureDate" class="control-label"></label>
+                <input asp-for="DepartureDate" class="form-control" />
+                <span asp-validation-for="DepartureDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RoomNo" class="control-label"></label>
+                <input asp-for="RoomNo" class="form-control" />
+                <span asp-validation-for="RoomNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Status" class="control-label"></label>
+                <input asp-for="Status" class="form-control" />
+                <span asp-validation-for="Status" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TatolDays" class="control-label"></label>
+                <input asp-for="TatolDays" class="form-control" />
+                <span asp-validation-for="TatolDays" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TotalChildren" class="control-label"></label>
+                <input asp-for="TotalChildren" class="form-control" />
+                <span asp-validation-for="TotalChildren" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TotalChildrenWithPrice" class="control-label"></label>
+                <input asp-for="TotalChildrenWithPrice" class="form-control" />
+                <span asp-validation-for="TotalChildrenWithPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TotalAdult" class="control-label"></label>
+                <input asp-for="TotalAdult" class="form-control" />
+                <span asp-validation-for="TotalAdult" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TotalPersons" class="control-label"></label>
+                <input asp-for="TotalPersons" class="form-control" />
+                <span asp-validation-for="TotalPersons" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AccommodationType" class="control-label"></label>
+                <input asp-for="AccommodationType" class="form-control" />
+                <span asp-validation-for="AccommodationType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BoardType" class="control-label"></label>
+                <input asp-for="BoardType" class="form-control" />
+                <span asp-validation-for="BoardType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Breakfast" class="control-label"></label>
+                <input asp-for="Breakfast" class="form-control" />
+                <span asp-validation-for="Breakfast" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Lunch" class="control-label"></label>
+                <input asp-for="Lunch" class="form-control" />
+                <span asp-validation-for="Lunch" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Dinner" class="control-label"></label>
+                <input asp-for="Dinner" class="form-control" />
+                <span asp-validation-for="Dinner" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="InsertDateTime" class="control-label"></label>
+                <input asp-for="InsertDateTime" class="form-control" />
+                <span asp-validation-for="InsertDateTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UpdateDateTime" class="control-label"></label>
+                <input asp-for="UpdateDateTime" class="form-control" />
+                <span asp-validation-for="UpdateDateTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

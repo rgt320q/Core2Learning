@@ -30,5 +30,22 @@ namespace Core2LearnWebApp.Controllers
 
             return View(rez);
         }
+
+        public ViewResult Create()
+        {
+            var model = context.Rezervations
+                .Include(i => i.Guests)
+                .Include(i => i.Payments)
+                .ToList();
+
+            return View(model);
+        }
+
+        public ViewResult Edit()
+        {
+            return View();
+        }
+
+       
     }
 }

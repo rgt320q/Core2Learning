@@ -9,7 +9,7 @@ namespace Core2LearnWebApp.Models
     public class Rezervation
     {
         public int Id { get; set; }
-        [Required(ErrorMessage ="Lütfen geçerli bir tarih girin!")]
+        [Required(ErrorMessage ="Lütfen geçerli bir tarih girin!")]       
         public DateTime? Arrivaldate { get; set; }
         [Required(ErrorMessage = "Lütfen geçerli bir tarih girin!")]
         public DateTime? DepartureDate { get; set; }
