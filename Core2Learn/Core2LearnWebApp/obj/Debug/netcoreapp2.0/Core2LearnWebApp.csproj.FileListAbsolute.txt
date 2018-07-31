@@ -1,0 +1,4 @@
+C:\Git.Repository\HotelEntityCore2\Core2Learning\Core2Learn\Core2LearnWebApp\obj\Debug\netcoreapp2.0\Core2LearnWebApp.csprojAssemblyReference.cache
+C:\Git.Repository\HotelEntityCore2\Core2Learning\Core2Learn\Core2LearnWebApp\obj\Debug\netcoreapp2.0\Core2LearnWebApp.csproj.CoreCompileInputs.cache
+C:\Git.Repository\HotelEntityCore2\Core2Learning\Core2Learn\Core2LearnWebApp\obj\Debug\netcoreapp2.0\Core2LearnWebApp.AssemblyInfoInputs.cache
+C:\Git.Repository\HotelEntityCore2\Core2Learning\Core2Learn\Core2LearnWebApp\obj\Debug\netcoreapp2.0\Core2LearnWebApp.AssemblyInfo.cs
