@@ -11,8 +11,8 @@ using System;
 namespace Core2LearnWebApp.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20180731100806_TablesSettingMigration")]
-    partial class TablesSettingMigration
+    [Migration("20180808184247_PaymentReleation")]
+    partial class PaymentReleation
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -58,11 +58,12 @@ namespace Core2LearnWebApp.Migrations
 
                     b.Property<string>("MotherName");
 
-                    b.Property<string>("Name");
+                    b.Property<string>("Name")
+                        .IsRequired();
 
                     b.Property<string>("Phone");
 
-                    b.Property<int>("RezervationId");
+                    b.Property<int?>("RezervationId");
 
                     b.Property<string>("RezervationNote");
 
@@ -96,11 +97,11 @@ namespace Core2LearnWebApp.Migrations
 
                     b.Property<double?>("ExtrasPrice");
 
+                    b.Property<int?>("GuestId");
+
                     b.Property<DateTime?>("InsertDateTime");
 
                     b.Property<double?>("LunchPrice");
-
-                    b.Property<int>("RezervationId");
 
                     b.Property<double?>("RoomPrice");
 
@@ -124,7 +125,7 @@ namespace Core2LearnWebApp.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("RezervationId");
+                    b.HasIndex("GuestId");
 
                     b.ToTable("Payments");
                 });
@@ -175,16 +176,14 @@ namespace Core2LearnWebApp.Migrations
                 {
                     b.HasOne("Core2LearnWebApp.Models.Rezervation", "Rezervation")
                         .WithMany("Guests")
-                        .HasForeignKey("RezervationId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("RezervationId");
                 });
 
             modelBuilder.Entity("Core2LearnWebApp.Models.Payment", b =>
                 {
-                    b.HasOne("Core2LearnWebApp.Models.Rezervation", "Rezervation")
+                    b.HasOne("Core2LearnWebApp.Models.Guest", "Guest")
                         .WithMany("Payments")
-                        .HasForeignKey("RezervationId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("GuestId");
                 });
 #pragma warning restore 612, 618
         }

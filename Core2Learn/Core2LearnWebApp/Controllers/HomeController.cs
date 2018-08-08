@@ -23,7 +23,7 @@ namespace Core2LearnWebApp.Controllers
 
             var model = context.Rezervations
                 .Include(i => i.Guests)
-                .Include(i => i.Payments).ToList();
+                .ThenInclude(i => i.Payments).ToList();
 
             return View(model);
         }

@@ -1,4 +1,6 @@
-﻿@model List<Rezervation>
+﻿@*@model Tuple<Rezervation,Guest,Payment>*@
+@model Payment
+
 
 @{
     ViewData["Title"] = "Create";
@@ -7,54 +9,82 @@
 
 
 
-<form method="post" asp-action="Create">
-    <p>
-        @foreach (var item in Model)
-        {
-        <div class="row table-bordered">
+<div class="text-center">
+    <form method="post" asp-action="Create">
+        <div class="row">
+            <label asp-for="Guest.Rezervation.Arrivaldate">Geliş Zamanı :</label>
+            <input asp-for="Guest.Rezervation.Arrivaldate" />
 
-            @foreach (var guest in item.Guests)
-            {
-                <label asp-for="@guest.Name">Name</label>
-                <input asp-for="@guest.Name" />
+            <label asp-for="Guest.Rezervation.DepartureDate">Çıkış Zamanı :</label>
+            <input asp-for="Guest.Rezervation.DepartureDate" />
 
-                <label asp-for="@guest.SurName">SurName</label>
-                <input asp-for="@guest.SurName" />
-            }
-            <label asp-for="@item.RoomNo">Room No</label>
-            <input asp-for="@item.RoomNo" />
-
-            <label asp-for="@item.Arrivaldate">Arrivaldate</label>
-            <input asp-for="@item.Arrivaldate" />
-
-            <label asp-for="@item.DepartureDate">DepartureDate</label>
-            <input asp-for="@item.DepartureDate" />
-
-
-            @foreach (var payment in item.Payments)
-            {
-                <label asp-for="@payment.TotalPrice">Total Price</label>
-                <input asp-for="@payment.TotalPrice" />
-
-            }
+            <label asp-for="Guest.Rezervation.RoomNo">Oda Numarası :</label>
+            <input asp-for="Guest.Rezervation.RoomNo" />
         </div>
-        }
-    </p>
-    <button type="submit">Submit</button>
-</form>
+        <div class="row">
+            <label asp-for="Guest.Name">Misafir Adı :</label>
+            <input asp-for="Guest.Name" />
+            <label asp-for="Guest.SurName">Misafir Adı :</label>
+            <input asp-for="Guest.SurName" />
+        </div>
+        <div class="row">
+            <label asp-for="TotalPrice">Toplam Tutar :</label>
+            <input asp-for="TotalPrice" />            
+        </div>
+
+        <button type="submit">Submit</button>
+
+    </form>
+</div>
+
+
+@*<form method="post" asp-action="Create">
+        <p>
+            @foreach (var item in Model)
+            {
+            <div class="row table-bordered">
+
+                @foreach (var guest in item.Guests)
+                {
+                    <label asp-for="@guest.Name">Name</label>
+                    <input asp-for="@guest.Name" />
+
+                    <label asp-for="@guest.SurName">SurName</label>
+                    <input asp-for="@guest.SurName" />
+                }
+                <label asp-for="@item.RoomNo">Room No</label>
+                <input asp-for="@item.RoomNo" />
+
+                <label asp-for="@item.Arrivaldate">Arrivaldate</label>
+                <input asp-for="@item.Arrivaldate" />
+
+                <label asp-for="@item.DepartureDate">DepartureDate</label>
+                <input asp-for="@item.DepartureDate" />
+
+
+                @foreach (var payment in item.Payments)
+                {
+                    <label asp-for="@payment.TotalPrice">Total Price</label>
+                    <input asp-for="@payment.TotalPrice" />
+
+                }
+            </div>
+            }
+        </p>
+        <button type="submit">Submit</button>
+    </form>*@
 
 
 
-<hr />
 
 
 
 
 @*<h2>Create</h2>
 
-    <h4>Rezervation</h4>
-    <hr />
-    <div class="row">
+    <h4>Rezervation</h4>*@
+
+@*<div class="row">
         <div class="col-md-4">
             <form asp-action="Create">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>

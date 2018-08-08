@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Core2LearnWebApp.Models.Rezervation>
+﻿@model IEnumerable<Payment>
 
 @{
     ViewData["Title"] = "List";
@@ -9,7 +9,7 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-<table class="table table-bordered">
+<table class="table table-bordered text-center">
     <thead>
         <tr>
             <th>
@@ -22,46 +22,13 @@
                 Surname
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Arrivaldate)
+                Arrivaldate
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.DepartureDate)
+                DepartureDate
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.RoomNo)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Status)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TatolDays)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TotalChildren)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TotalChildrenWithPrice)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TotalAdult)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TotalPersons)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.AccommodationType)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.BoardType)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Breakfast)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Lunch)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Dinner)
+                RoomNo
             </th>
             <th>
                 Total Price
@@ -72,74 +39,36 @@
     <tbody>
         @foreach (var item in Model)
         {
-        <tr>
-            <td>
-                @item.Id
-            </td>
-            @foreach (var gst in item.Guests)
-            {
+            <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => gst.Name)
+                    @item.Guest.Rezervation.Id
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => gst.SurName)
+                    @item.Guest.Name
                 </td>
-            }
-            <td>
-                @item.Arrivaldate.Value.ToShortDateString()
-            </td>
-            <td>
-                @item.DepartureDate.Value.ToShortDateString()
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.RoomNo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Status)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TatolDays)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TotalChildren)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TotalChildrenWithPrice)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TotalAdult)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TotalPersons)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.AccommodationType)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.BoardType)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Breakfast)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Lunch)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Dinner)
-            </td>
+                <td>
+                    @item.Guest.SurName
+                </td>
 
-            @foreach (var py in item.Payments)
-            {
                 <td>
-                    @py.TotalPrice.ToString("C")
+                    @item.Guest.Rezervation.Arrivaldate.Value.ToShortDateString()
                 </td>
-            }
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
+                <td>
+                    @item.Guest.Rezervation.DepartureDate.Value.ToShortDateString()
+                </td>
+                <td>
+                    @item.Guest.Rezervation.RoomNo
+                </td>
+                <td>
+                    @item.TotalPrice.ToString("C")
+                </td>
+
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
         }
     </tbody>
 </table>

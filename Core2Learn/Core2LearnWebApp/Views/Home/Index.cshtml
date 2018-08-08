@@ -17,10 +17,10 @@
          Çıkış Tarihi: @item.DepartureDate.Value.Date.ToString("dd-MM-yyyy")<br />
      </div>
 
-    @foreach (var p in item.Payments)
+    @*@foreach (var p in item.Payments)
     {
         @p.TotalPrice.ToString("C")
-    }
+    }*@
     }
 </div>
 
@@ -53,10 +53,10 @@
                     <td>@RezList.Arrivaldate.Value.ToShortDateString()</td>
                     <td>@RezList.DepartureDate.Value.ToShortDateString()</td>
 
-                    @foreach (var py in RezList.Payments)
+                    @*@foreach (var py in RezList.Payments)
                     {
                         <td>@py.TotalPrice.ToString("C")</td>
-                    }
+                    }*@
                 </tr>
             }
         </tbody>

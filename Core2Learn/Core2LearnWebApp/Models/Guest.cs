@@ -11,11 +11,11 @@ namespace Core2LearnWebApp.Models
         public int Id { get; set; }
         [Required(ErrorMessage ="Adınızı girin!")]
         public string Name { get; set; }
-        [Required(ErrorMessage = "Soyadınızı girin!")]
+        //[Required(ErrorMessage = "Soyadınızı girin!")]
         public string SurName { get; set; }
-        [EmailAddress(ErrorMessage ="Email adresinizi girin!")]
+        //[EmailAddress(ErrorMessage ="Email adresinizi girin!")]
         public string Email { get; set; }
-        [Phone(ErrorMessage ="Telefon girin!")]
+        //[Phone(ErrorMessage ="Telefon girin!")]
         public string Phone { get; set; }
         public DateTime? BirthDay { get; set; }
         public string IdentityType { get; set; }
@@ -35,7 +35,9 @@ namespace Core2LearnWebApp.Models
         public DateTime? InsertDateTime { get; set; }
         public DateTime? UpdateDateTime { get; set; }
 
-        public int RezervationId { get; set; }
+        //public int RezervationId { get; set; }
         public Rezervation Rezervation { get; set; }
+        public IEnumerable<Payment> Payments { get; set; }
+        
     }
 }

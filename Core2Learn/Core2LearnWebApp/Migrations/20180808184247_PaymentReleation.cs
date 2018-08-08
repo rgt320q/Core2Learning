@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace Core2LearnWebApp.Migrations
 {
-    public partial class FirstMigration : Migration
+    public partial class PaymentReleation : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -49,19 +49,19 @@ namespace Core2LearnWebApp.Migrations
                     City = table.Column<string>(nullable: true),
                     Country = table.Column<string>(nullable: true),
                     District = table.Column<string>(nullable: true),
+                    Email = table.Column<string>(nullable: true),
                     FatherName = table.Column<string>(nullable: true),
                     Gender = table.Column<string>(nullable: true),
-                    GuestEmail = table.Column<string>(nullable: true),
-                    GuestMartialStatus = table.Column<string>(nullable: true),
                     GuestSequenceNo = table.Column<int>(nullable: true),
                     IdentityNumber = table.Column<string>(nullable: true),
                     IdentitySerialNo = table.Column<string>(nullable: true),
                     IdentityType = table.Column<string>(nullable: true),
                     InsertDateTime = table.Column<DateTime>(nullable: true),
+                    MartialStatus = table.Column<string>(nullable: true),
                     MotherName = table.Column<string>(nullable: true),
-                    Name = table.Column<string>(nullable: true),
+                    Name = table.Column<string>(nullable: false),
                     Phone = table.Column<string>(nullable: true),
-                    RezervationId = table.Column<int>(nullable: false),
+                    RezervationId = table.Column<int>(nullable: true),
                     RezervationNote = table.Column<string>(nullable: true),
                     SurName = table.Column<string>(nullable: true),
                     UpdateDateTime = table.Column<DateTime>(nullable: true)
@@ -74,7 +74,7 @@ namespace Core2LearnWebApp.Migrations
                         column: x => x.RezervationId,
                         principalTable: "Rezervations",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -90,9 +90,9 @@ namespace Core2LearnWebApp.Migrations
                     DinnerPrice = table.Column<double>(nullable: true),
                     DiscountPrice = table.Column<double>(nullable: true),
                     ExtrasPrice = table.Column<double>(nullable: true),
+                    GuestId = table.Column<int>(nullable: true),
                     InsertDateTime = table.Column<DateTime>(nullable: true),
                     LunchPrice = table.Column<double>(nullable: true),
-                    RezervationId = table.Column<int>(nullable: false),
                     RoomPrice = table.Column<double>(nullable: true),
                     TotalAccommodationPrice = table.Column<double>(nullable: true),
                     TotalBreakFastPrice = table.Column<double>(nullable: true),
@@ -108,11 +108,11 @@ namespace Core2LearnWebApp.Migrations
                 {
                     table.PrimaryKey("PK_Payments", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Payments_Rezervations_RezervationId",
-                        column: x => x.RezervationId,
-                        principalTable: "Rezervations",
+                        name: "FK_Payments_Guests_GuestId",
+                        column: x => x.GuestId,
+                        principalTable: "Guests",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateIndex(
@@ -121,18 +121,18 @@ namespace Core2LearnWebApp.Migrations
                 column: "RezervationId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Payments_RezervationId",
+                name: "IX_Payments_GuestId",
                 table: "Payments",
-                column: "RezervationId");
+                column: "GuestId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Guests");
+                name: "Payments");
 
             migrationBuilder.DropTable(
-                name: "Payments");
+                name: "Guests");
 
             migrationBuilder.DropTable(
                 name: "Rezervations");
