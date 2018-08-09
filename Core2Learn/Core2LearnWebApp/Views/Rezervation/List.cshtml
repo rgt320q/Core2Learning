@@ -4,22 +4,16 @@
     ViewData["Title"] = "List";
 }
 
-<h2>List</h2>
+<h3>List</h3>
 
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-<table class="table table-bordered text-center">
-    <thead>
+<table class="table table-bordered table-striped table-hover text-center">
+    <thead class="bg-primary">
         <tr>
             <th>
-                Rezervation No
-            </th>
-            <th>
-                Name
-            </th>
-            <th>
-                Surname
+                No
             </th>
             <th>
                 Arrivaldate
@@ -28,47 +22,88 @@
                 DepartureDate
             </th>
             <th>
+                Name
+            </th>
+            <th>
+                Surname
+            </th>
+            <th>
+                Phone
+            </th>
+            <th>
+                Email
+            </th>
+            <th>
                 RoomNo
+            </th>
+            <th>
+                Rezervation Note
             </th>
             <th>
                 Total Price
             </th>
-            <th></th>
+            <th>
+                Create Time
+            </th>
+            <th>
+                Update Time
+            </th>
+            <th>
+                Guest seq
+            </th>
+            @*<th></th>*@
         </tr>
     </thead>
     <tbody>
         @foreach (var item in Model)
         {
-            <tr>
-                <td>
-                    @item.Guest.Rezervation.Id
-                </td>
-                <td>
-                    @item.Guest.Name
-                </td>
-                <td>
-                    @item.Guest.SurName
-                </td>
+        <tr>
+            <td>
+                @item.Guest.Rezervation.Id
+            </td>
+            <td>
+                @item.Guest.Rezervation.Arrivaldate.Value.ToShortDateString()
+            </td>
+            <td>
+                @item.Guest.Rezervation.DepartureDate.Value.ToShortDateString()
+            </td>
+            <td>
+                @item.Guest.Name
+            </td>
+            <td>
+                @item.Guest.SurName
+            </td>
+            <td>
+                @item.Guest.Phone
+            </td>
+            <td>
+                @item.Guest.Email
+            </td>
+            <td>
+                @item.Guest.Rezervation.RoomNo
+            </td>
+            <td>
+                @item.Guest.RezervationNote
+            </td>
+            <td>
+                @item.TotalPrice.ToString("C")
+            </td>
+            <td>
+                @item.Guest.Rezervation.InsertDateTime
+            </td>
+            <td>
+                @item.Guest.Rezervation.UpdateDateTime
+            </td>
+            <td>
+                @item.Guest.GuestSequenceNo
+            </td>
 
-                <td>
-                    @item.Guest.Rezervation.Arrivaldate.Value.ToShortDateString()
-                </td>
-                <td>
-                    @item.Guest.Rezervation.DepartureDate.Value.ToShortDateString()
-                </td>
-                <td>
-                    @item.Guest.Rezervation.RoomNo
-                </td>
-                <td>
-                    @item.TotalPrice.ToString("C")
-                </td>
-
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-                </td>
-            </tr>
+            @*<td>
+            <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+            <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+            <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+        </td>*@
+        </tr>
         }
     </tbody>
 </table>

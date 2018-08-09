@@ -55,9 +55,15 @@ namespace Core2LearnWebApp.Controllers
             //context.Rezervations
             //    .Include(i => i.Guests)
             //    .Include(i => i.Payments);
+            payment.Guest.GuestSequenceNo = 1;
+            payment.InsertDateTime = DateTime.Now;
+            payment.UpdateDateTime = DateTime.Now;
+            payment.Guest.InsertDateTime = DateTime.Now;
+            payment.Guest.UpdateDateTime = DateTime.Now;
+            payment.Guest.Rezervation.InsertDateTime = DateTime.Now;
+            payment.Guest.Rezervation.UpdateDateTime = DateTime.Now;
 
 
-            
             context.Payments.Add(payment);
             //context.Guests.Add(Model2);
             //context.Payments.Add(Model3);

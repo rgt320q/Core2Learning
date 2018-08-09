@@ -9,31 +9,37 @@
 
 
 
-<div class="text-center">
+<div class="row">
     <form method="post" asp-action="Create">
-        <div class="row">
+        <div class="col-md-2">            
             <label asp-for="Guest.Rezervation.Arrivaldate">Geliş Zamanı :</label>
-            <input asp-for="Guest.Rezervation.Arrivaldate" />
+            <input asp-for="Guest.Rezervation.Arrivaldate" /> <br />
 
             <label asp-for="Guest.Rezervation.DepartureDate">Çıkış Zamanı :</label>
-            <input asp-for="Guest.Rezervation.DepartureDate" />
+            <input asp-for="Guest.Rezervation.DepartureDate" /> <br />
 
             <label asp-for="Guest.Rezervation.RoomNo">Oda Numarası :</label>
-            <input asp-for="Guest.Rezervation.RoomNo" />
+            <input asp-for="Guest.Rezervation.RoomNo" /> <br />
         </div>
-        <div class="row">
-            <label asp-for="Guest.Name">Misafir Adı :</label>
-            <input asp-for="Guest.Name" />
-            <label asp-for="Guest.SurName">Misafir Adı :</label>
-            <input asp-for="Guest.SurName" />
+        <div class="col-md-2">
+            <label asp-for="Guest.Name">Adı :</label>
+            <input asp-for="Guest.Name" /> <br />
+            <label asp-for="Guest.SurName">Soyadı :</label>
+            <input asp-for="Guest.SurName" /><br />
+            <label asp-for="Guest.Phone">Telefonu :</label>
+            <input asp-for="Guest.Phone" /><br />
+            <label asp-for="Guest.Email">Email :</label>
+            <input asp-for="Guest.Email" /><br />
+            <label asp-for="Guest.RezervationNote">Rezervasyon Notu :</label>
+            <input asp-for="Guest.RezervationNote" /><br />
         </div>
-        <div class="row">
+        <div class="col-md-2">
             <label asp-for="TotalPrice">Toplam Tutar :</label>
-            <input asp-for="TotalPrice" />            
+            <input asp-for="TotalPrice" /><br />
         </div>
-
-        <button type="submit">Submit</button>
-
+        <div class="col-md-4 text-center">
+            <button type="submit">Submit</button>
+        </div>
     </form>
 </div>
 

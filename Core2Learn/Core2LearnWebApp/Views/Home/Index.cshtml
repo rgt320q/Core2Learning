@@ -1,68 +1,44 @@
-﻿@model List<Rezervation>
+﻿@model IEnumerable<Rezervation>
 
 @{
     ViewData["Title"] = "Home Page";
 }
 
-<div class="row col-md-4">
+<div class="row">
+
     @foreach (var item in Model)
-    {
-     <div>
-         @foreach (var g in item.Guests)
-         {<div class="row">
-                 @g.Name @g.SurName <br />
-             </div>
-         }
-         Geliş Tarihi: @item.Arrivaldate.Value.Date.ToString("dd-MM-yyyy")<br />
-         Çıkış Tarihi: @item.DepartureDate.Value.Date.ToString("dd-MM-yyyy")<br />
-     </div>
-
-    @*@foreach (var p in item.Payments)
-    {
-        @p.TotalPrice.ToString("C")
-    }*@
-    }
-</div>
-
-<br />
-<br />
-
-<div class="row col-md-2">
-    <table class="table-bordered">
-        <thead>
-            <tr>
-                <th>Rezervation No</th>
-                <th>Name</th>
-                <th>Surname</th>
-                <th>Arrival Date</th>
-                <th>Departure Date</th>
-                <th>Total Price</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var RezList in Model)
+    {<div class="col-md-4 text-center table-bordered bg-info">
+            
+    Rezervasyon No: @item.Id <br />
+    
+    
+    @foreach (var gu in item.Guests)
             {
-                <tr>
-                    <td>@RezList.Id</td>
-                    @foreach (var gst in RezList.Guests)
-                    {
-                        <td>@gst.Name</td>
-                        <td>@gst.SurName</td>
-                    }
-
-                    <td>@RezList.Arrivaldate.Value.ToShortDateString()</td>
-                    <td>@RezList.DepartureDate.Value.ToShortDateString()</td>
-
-                    @*@foreach (var py in RezList.Payments)
-                    {
-                        <td>@py.TotalPrice.ToString("C")</td>
-                    }*@
-                </tr>
+                <div class="">
+                    Adı Soyadı: @gu.Name @gu.SurName
+                </div>
             }
-        </tbody>
-    </table>
+            <div>
+                Oda Numarası: @item.RoomNo <br />
+                Geliş Tarihi: @item.Arrivaldate.Value.Date.ToString("dd-MM-yyyy")<br />
+                Çıkış Tarihi: @item.DepartureDate.Value.Date.ToString("dd-MM-yyyy")<br />
+            </div>
+
+            @foreach (var gu in item.Guests)
+            {
+                @foreach (var pa in gu.Payments)
+                {
+                    <div>
+                        Toplam Tutar: @pa.TotalPrice.ToString("C")
+                    </div>
+                }
+
+            }
+        </div>
+    }
+
 </div>
-<div class="row col-md-2 text-primary">
-    <h4><a asp-controller="Rezervation" asp-action="List">For Detail List</a></h4>
+<div class="row col-md-2 text-center table-bordered bg-success center-block">
+    <a asp-controller="Rezervation" asp-action="List">For Detail List</a>
 </div>
 
