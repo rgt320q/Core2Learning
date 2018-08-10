@@ -1,13 +1,9 @@
 ﻿@*@model Tuple<Rezervation,Guest,Payment>*@
 @model Payment
 
-
 @{
     ViewData["Title"] = "Create";
 }
-
-
-
 
 <div class="row">
     <form method="post" asp-action="Create">
@@ -38,11 +34,10 @@
             <input asp-for="TotalPrice" /><br />
         </div>
         <div class="col-md-4 text-center">
-            <button type="submit">Submit</button>
+            <button class="btn btn-success btn-lg" type="submit">Submit</button>
         </div>
     </form>
 </div>
-
 
 @*<form method="post" asp-action="Create">
         <p>
@@ -79,9 +74,6 @@
         </p>
         <button type="submit">Submit</button>
     </form>*@
-
-
-
 
 
 
