@@ -13,3 +13,10 @@ D:\Git\Core2Learning\Core2Learn\Core2LearnWebApp\bin\Debug\netcoreapp2.0\Core2Le
 D:\Git\Core2Learning\Core2Learn\Core2LearnWebApp\bin\Debug\netcoreapp2.0\Core2LearnWebApp.pdb
 D:\Git\Core2Learning\Core2Learn\Core2LearnWebApp\obj\Debug\netcoreapp2.0\Core2LearnWebApp.dll
 D:\Git\Core2Learning\Core2Learn\Core2LearnWebApp\obj\Debug\netcoreapp2.0\Core2LearnWebApp.pdb
+C:\Git.Repository\HotelEntityCore2\Core2Learning\Core2Learn\Core2LearnWebApp\bin\Debug\netcoreapp2.0\Core2LearnWebApp.deps.json
+C:\Git.Repository\HotelEntityCore2\Core2Learning\Core2Learn\Core2LearnWebApp\bin\Debug\netcoreapp2.0\Core2LearnWebApp.runtimeconfig.json
+C:\Git.Repository\HotelEntityCore2\Core2Learning\Core2Learn\Core2LearnWebApp\bin\Debug\netcoreapp2.0\Core2LearnWebApp.runtimeconfig.dev.json
+C:\Git.Repository\HotelEntityCore2\Core2Learning\Core2Learn\Core2LearnWebApp\bin\Debug\netcoreapp2.0\Core2LearnWebApp.dll
+C:\Git.Repository\HotelEntityCore2\Core2Learning\Core2Learn\Core2LearnWebApp\bin\Debug\netcoreapp2.0\Core2LearnWebApp.pdb
+C:\Git.Repository\HotelEntityCore2\Core2Learning\Core2Learn\Core2LearnWebApp\obj\Debug\netcoreapp2.0\Core2LearnWebApp.dll
+C:\Git.Repository\HotelEntityCore2\Core2Learning\Core2Learn\Core2LearnWebApp\obj\Debug\netcoreapp2.0\Core2LearnWebApp.pdb

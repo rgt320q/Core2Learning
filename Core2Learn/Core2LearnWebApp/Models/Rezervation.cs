@@ -8,10 +8,26 @@ namespace Core2LearnWebApp.Models
 {
     public class Rezervation
     {
-        public int Id { get; set; }
-        [Required(ErrorMessage ="Lütfen geçerli bir tarih girin!")]       
+        public Rezervation()
+        {
+            Guests = new List<Guest>();
+            Payments = new List<Payment>();
+        }
+
+        public int Id { get; set; }        
+        //[Required(ErrorMessage = "Adınızı girin!")]
+        public string Name { get; set; }
+        //[Required(ErrorMessage = "Soyadınızı girin!")]
+        public string SurName { get; set; }
+        //[EmailAddress(ErrorMessage = "Email adresinizi girin!")]
+        public string Email { get; set; }
+        //[Phone(ErrorMessage = "Telefon girin!")]
+        public string Phone { get; set; }
+        public DateTime? BirthDay { get; set; }        
+        public string RezervationNote { get; set; }        
+        //[Required(ErrorMessage ="Lütfen geçerli bir tarih girin!")]       
         public DateTime? Arrivaldate { get; set; }
-        [Required(ErrorMessage = "Lütfen geçerli bir tarih girin!")]
+        //[Required(ErrorMessage = "Lütfen geçerli bir tarih girin!")]
         public DateTime? DepartureDate { get; set; }
         public string RoomNo { get; set; }
         public string Status { get; set; }
@@ -28,7 +44,12 @@ namespace Core2LearnWebApp.Models
         public DateTime? InsertDateTime { get; set; }
         public DateTime? UpdateDateTime { get; set; }
 
-        public IEnumerable<Guest> Guests { get; set; }
-        public IEnumerable<Payment> Payments { get; set; }
+        public virtual ICollection<Guest> Guests { get; set; }
+        public virtual ICollection<Payment> Payments { get; set; }
+
+
+
+
+
     }
 }

@@ -11,9 +11,10 @@ using System;
 namespace Core2LearnWebApp.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20180806191433_ReletionReview")]
+    partial class ReletionReview
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -97,11 +98,11 @@ namespace Core2LearnWebApp.Migrations
 
                     b.Property<double?>("ExtrasPrice");
 
+                    b.Property<int>("GuestId");
+
                     b.Property<DateTime?>("InsertDateTime");
 
                     b.Property<double?>("LunchPrice");
-
-                    b.Property<int>("RezervationId");
 
                     b.Property<double?>("RoomPrice");
 
@@ -125,7 +126,7 @@ namespace Core2LearnWebApp.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("RezervationId");
+                    b.HasIndex("GuestId");
 
                     b.ToTable("Payments");
                 });
@@ -194,9 +195,9 @@ namespace Core2LearnWebApp.Migrations
 
             modelBuilder.Entity("Core2LearnWebApp.Models.Payment", b =>
                 {
-                    b.HasOne("Core2LearnWebApp.Models.Rezervation", "Rezervation")
+                    b.HasOne("Core2LearnWebApp.Models.Guest", "Guest")
                         .WithMany("Payments")
-                        .HasForeignKey("RezervationId")
+                        .HasForeignKey("GuestId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618

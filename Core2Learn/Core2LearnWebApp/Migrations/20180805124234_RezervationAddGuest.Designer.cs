@@ -11,9 +11,10 @@ using System;
 namespace Core2LearnWebApp.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20180805124234_RezervationAddGuest")]
+    partial class RezervationAddGuest
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -137,7 +138,8 @@ namespace Core2LearnWebApp.Migrations
 
                     b.Property<string>("AccommodationType");
 
-                    b.Property<DateTime?>("Arrivaldate");
+                    b.Property<DateTime?>("Arrivaldate")
+                        .IsRequired();
 
                     b.Property<DateTime?>("BirthDay");
 
@@ -145,7 +147,8 @@ namespace Core2LearnWebApp.Migrations
 
                     b.Property<string>("Breakfast");
 
-                    b.Property<DateTime?>("DepartureDate");
+                    b.Property<DateTime?>("DepartureDate")
+                        .IsRequired();
 
                     b.Property<string>("Dinner");
 
@@ -155,7 +158,8 @@ namespace Core2LearnWebApp.Migrations
 
                     b.Property<string>("Lunch");
 
-                    b.Property<string>("Name");
+                    b.Property<string>("Name")
+                        .IsRequired();
 
                     b.Property<string>("Phone");
 
@@ -165,7 +169,8 @@ namespace Core2LearnWebApp.Migrations
 
                     b.Property<string>("Status");
 
-                    b.Property<string>("SurName");
+                    b.Property<string>("SurName")
+                        .IsRequired();
 
                     b.Property<int?>("TatolDays");
 

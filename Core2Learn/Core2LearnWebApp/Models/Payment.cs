@@ -29,6 +29,7 @@ namespace Core2LearnWebApp.Models
         public DateTime? UpdateDateTime { get; set; }
 
         public int RezervationId { get; set; }
-        public Rezervation Rezervation { get; set; }
+        public virtual Rezervation Rezervation { get; set; }
+
     }
 }
