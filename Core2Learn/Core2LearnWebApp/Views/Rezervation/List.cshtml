@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Payment>
+﻿@model IEnumerable<Rezervation>
 
 @{
     ViewData["Title"] = "List";
@@ -40,6 +40,9 @@
                 Rezervation Note
             </th>
             <th>
+                Guest seq
+            </th>
+            <th>
                 Total Price
             </th>
             <th>
@@ -48,10 +51,8 @@
             <th>
                 Update Time
             </th>
-            <th>
-                Guest seq
-            </th>
-            @*<th></th>*@
+
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -59,49 +60,56 @@
         {
         <tr>
             <td>
-                @item.Guest.Rezervation.Id
+                @item.Id
             </td>
             <td>
-                @item.Guest.Rezervation.Arrivaldate.Value.ToShortDateString()
+                @item.Arrivaldate.ToShortDateString()
             </td>
             <td>
-                @item.Guest.Rezervation.DepartureDate.Value.ToShortDateString()
+                @item.DepartureDate.ToShortDateString()
+            </td>
+            @foreach (var guest in item.Guests)
+            {
+                <td>
+                    @guest.Name
+                </td>
+                <td>
+                    @guest.SurName
+                </td>
+                <td>
+                    @guest.Phone
+                </td>
+                <td>
+                    @guest.Email
+                </td>
+                <td>
+                    @guest.Rezervation.RoomNo
+                </td>
+                <td>
+                    @guest.RezervationNote
+                </td>
+                <td>
+                    @guest.GuestSequenceNo
+                </td>
+            }
+            @foreach (var payment in item.Payments)
+            {
+                <td>
+                    @payment.TotalPrice.ToString("C")
+                </td>
+            }
+            <td>
+                @item.InsertDateTime
             </td>
             <td>
-                @item.Guest.Name
-            </td>
-            <td>
-                @item.Guest.SurName
-            </td>
-            <td>
-                @item.Guest.Phone
-            </td>
-            <td>
-                @item.Guest.Email
-            </td>
-            <td>
-                @item.Guest.Rezervation.RoomNo
-            </td>
-            <td>
-                @item.Guest.RezervationNote
-            </td>
-            <td>
-                @item.TotalPrice.ToString("C")
-            </td>
-            <td>
-                @item.Guest.Rezervation.InsertDateTime
-            </td>
-            <td>
-                @item.Guest.Rezervation.UpdateDateTime
-            </td>
-            <td>
-                @item.Guest.GuestSequenceNo
+                @item.UpdateDateTime
             </td>
 
+
             <td>
-            <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-info btn-xs">Edit</a>
-            <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger btn-xs">Delete</a>
-        </td>
+                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-info btn-xs">Edit</a>
+                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger btn-xs">Delete</a>
+            </td>
         </tr>
         }
     </tbody>

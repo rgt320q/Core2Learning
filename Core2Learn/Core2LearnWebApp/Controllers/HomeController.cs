@@ -7,12 +7,14 @@ using Microsoft.AspNetCore.Mvc;
 using Core2LearnWebApp.Models;
 using Core2LearnWebApp.Data.EntityFramework;
 using Microsoft.EntityFrameworkCore;
+using Core2LearnWebApp.Models.ViewModels;
 
 namespace Core2LearnWebApp.Controllers
 {
     public class HomeController : Controller
     {
         private DataContext context;
+        RezGuePayVModel mdl = new RezGuePayVModel();
 
         public HomeController(DataContext _context)
         {
@@ -23,7 +25,7 @@ namespace Core2LearnWebApp.Controllers
 
             var model = context.Rezervations
                 .Include(i => i.Guests)
-                .ThenInclude(i => i.Payments).ToList();
+                .Include(i => i.Payments).ToList();
 
             return View(model);
         }

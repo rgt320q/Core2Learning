@@ -10,9 +10,9 @@ namespace Core2LearnWebApp.Models
     {
         public int Id { get; set; }
         //[Required(ErrorMessage ="Lütfen geçerli bir tarih girin!")]       
-        public DateTime? Arrivaldate { get; set; }
+        public DateTime Arrivaldate { get; set; }
         //[Required(ErrorMessage = "Lütfen geçerli bir tarih girin!")]
-        public DateTime? DepartureDate { get; set; }
+        public DateTime DepartureDate { get; set; }
         public string RoomNo { get; set; }
         public string Status { get; set; }
         public int? TatolDays { get; set; }
@@ -29,6 +29,7 @@ namespace Core2LearnWebApp.Models
         public DateTime? UpdateDateTime { get; set; }
 
         public IEnumerable<Guest> Guests { get; set; }
-        
+        public IEnumerable<Payment> Payments { get; set; }
+
     }
 }

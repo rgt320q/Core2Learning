@@ -35,9 +35,9 @@ namespace Core2LearnWebApp.Models
         public DateTime? InsertDateTime { get; set; }
         public DateTime? UpdateDateTime { get; set; }
 
-        //public int RezervationId { get; set; }
+        public int RezervationId { get; set; }
         public Rezervation Rezervation { get; set; }
-        public IEnumerable<Payment> Payments { get; set; }
+        
         
     }
 }

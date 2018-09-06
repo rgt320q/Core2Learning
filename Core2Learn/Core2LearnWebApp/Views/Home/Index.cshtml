@@ -12,12 +12,13 @@
 
 @foreach (var item in Model)
 {
-    @if (item.Arrivaldate.Value.Date >= DateTime.Now)
+    @if (item.Arrivaldate.Date >= DateTime.Now)
     {
         <br />
         <div class="row">
             <div class=" text-center bg-success">
                 Rezervasyon No: @item.Id <br />
+
                 @foreach (var gu in item.Guests)
                 {
                     <div class="">
@@ -26,18 +27,17 @@
                 }
                 <div>
                     Oda Numarası: @item.RoomNo <br />
-                    Geliş Tarihi: @item.Arrivaldate.Value.Date.ToString("dd-MM-yyyy")<br />
-                    Çıkış Tarihi: @item.DepartureDate.Value.Date.ToString("dd-MM-yyyy")<br />
+                    Geliş Tarihi: @item.Arrivaldate.Date.ToString("dd-MM-yyyy")<br />
+                    Çıkış Tarihi: @item.DepartureDate.Date.ToString("dd-MM-yyyy")<br />
                 </div>
-                @foreach (var gu in item.Guests)
-                {
-                    @foreach (var pa in gu.Payments)
+               
+                    @foreach (var pa in item.Payments)
                     {
                         <div>
                             Toplam Tutar: @pa.TotalPrice.ToString("C")
                         </div>
                     }
-                }
+                
             </div>
         </div>
     }

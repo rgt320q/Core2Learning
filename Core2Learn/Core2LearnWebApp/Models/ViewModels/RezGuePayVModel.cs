@@ -7,9 +7,9 @@ namespace Core2LearnWebApp.Models.ViewModels
 {
     public class RezGuePayVModel
     {
-        public IEnumerable<Rezervation> Rezervations { get; set; }
-        public IEnumerable<Guest> Guests { get; set; }
-        public IEnumerable<Payment> Payments { get; set; }
+        public Rezervation Rezervations { get; set; }
+        public Guest Guests { get; set; }
+        public Payment Payments { get; set; }
 
     }
 }
